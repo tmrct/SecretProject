@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gift</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Card</a></li>
+            <li><a href="./gift.html">Gift</a></li>
+        </ul>
+    </nav>
+    
+    <a href="https://www.youtube.com/shorts/D4WVK-J9kpY" id="startTimer">CLIQUER ICI POUR UNE SURPRISE</a>
+    <br>
+    <div id="timer" style="display:none;">5</div>
+
+    <script>
+        document.getElementById('startTimer').addEventListener('click', function(event) {
+            event.preventDefault();
+            var timerElement = document.getElementById('timer');
+            timerElement.style.display = 'block';
+            var timeLeft = 5;
+            var countdown = setInterval(function() {
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    timerElement.style.display = 'none';
+                    window.location.href = "https://www.youtube.com/shorts/D4WVK-J9kpY";
+                } else {
+                    timerElement.textContent = timeLeft;
+                    timeLeft--;
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
